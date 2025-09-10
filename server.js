@@ -14,11 +14,13 @@ const app = express();
 
 // ✅ Enable CORS for your frontend (127.0.0.1:5500)
 app.use(cors({
-  origin: "http://127.0.0.1:5500"
+  origin: process.env.FRONTEND_URL
 }));
 
 app.use(bodyParser.json());
-
+app.get("/", (req, res) => {
+  res.send("Server is live!");
+});
 app.post("/send-notification", async (req, res) => {
   const { token, title, body } = req.body;
 
