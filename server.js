@@ -13,8 +13,11 @@ admin.initializeApp({
 const app = express();
 
 app.use(cors({
-  origin: "https://eadwyne02.github.io"
+  origin: "https://eadwyne02.github.io",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 app.use(bodyParser.json());
 app.get("/", (req, res) => {
