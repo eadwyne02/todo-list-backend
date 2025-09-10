@@ -12,9 +12,8 @@ admin.initializeApp({
 
 const app = express();
 
-// ✅ Enable CORS for your frontend (127.0.0.1:5500)
 app.use(cors({
-  origin: process.env.FRONTEND_URL
+  origin: "https://eadwyne02.github.io"
 }));
 
 app.use(bodyParser.json());
